@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>FAQ</title>
+   </head>
+   <div>
+      {% extends "template.html" %}
+      {% block content %}
+   <!--<section class="hero">-->
+      <!--<div class="container text-center">-->
+        <!--&lt;!&ndash; breadcrumb&ndash;&gt;-->
+
+        <!-- -->
+      <!--</div>-->
+    <!--</section>-->
+    <!-- Contact Section-->
+    <>
+      <div class="container">
+          <center>
+        <header class="section-header">
+              <h2 class="mb-2">Live Packet Details (eth0) </h2>
+          <!--<p class="lead">Please submit the traffic feature input and we will analyse immediately with a response.</p>-->
+        </header>
+        <div class="row align-items-center mt-5">
+          <div class="col-lg-7">
+            <form action="#" class="contact-form text-left">
+            {%if output%}
+                 <section>
+                  <div class="container">
+                    <!--<div class="text-center">-->
+                      <!--<h2> </h2>-->
+                        <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Message : </label> &nbsp; {{output['output']['Message']}}</p>
+                        </div>
+                    <!--</div>-->
+
+                    <div class="row">
+                        <label>Raw Data:</label>
+                      <p class="lead text-muted mt-2">{{output['output']['Raw Data']}}</p>
+                    </div>
+
+                      <div class="row">
+                        <label>Unpacked Data:</label>
+                      <p class="lead text-muted mt-2">{{output['output']['unpackedData']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Version IHL:</label> &nbsp {{output['output']['version_IHL']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Version:</label> &nbsp {{output['output']['Version']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Header Length:</label> &nbsp {{output['output']['Header Length']}}</p>
+                    </div>
+
+                      <div class="row">
+                        <label>Type of Service:</label>
+                      <p class="lead text-muted mt-2">{{output['output']['Type of Service']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Length:</label> &nbsp {{output['output']['Length']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">ID:</label>&nbsp{{output['output']['ID']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Flags:</label> &nbsp {{output['output']['Flags']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Fragment Offset:</label> &nbsp {{output['output']['Fragment offset']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">TTL:</label> &nbsp{{output['output']['TTL']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Protocol:</label>&nbsp{{output['output']['Protocol']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">Checksum:</label>&nbsp{{output['output']['Checksum']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">sourceAddress:</label>&nbsp{{output['output']['sourceAddress']}}</p>
+                    </div>
+
+                      <div class="row">
+
+                      <p class="lead text-muted mt-2"><label style="color:black">destinationAddress:</label> &nbsp{{output['output']['destinationAddress']}}</p>
+                    </div>
+
+                  </div>
+                 </section>
+                {% if output['p']['prediction'] == 'Anomalous Traffic !!!' %}
+                <center><div class="alert alert-danger" role="alert">
+                    <h1 style=""><b>{{output['p']['prediction']}}</b></h1>
+                </div>
+                     </center>
+                {% else %}
+                <center><div class="alert alert-success" role="alert">
+                    <h1 style=""><b>{{output['p']['prediction']}}</b></h1>
+                </div>
+                     </center>
+                {%endif%}
+            {% endif %}
+
+            </form>
+          </div>
+          </div>
+        </div>
+        </center>
+      </div>
+    </section>
+
+
+      {% endblock %}
+   </body>
+</html>

@@ -1,0 +1,7 @@
+app.py
+setup.py
+syslog.py
+IDS.egg-info/PKG-INFO
+IDS.egg-info/SOURCES.txt
+IDS.egg-info/dependency_links.txt
+IDS.egg-info/top_level.txt
