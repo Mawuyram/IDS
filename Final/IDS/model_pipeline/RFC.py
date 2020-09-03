@@ -1,4 +1,5 @@
-from sklearn.ensemble import RandomForestClassifier
+# from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 
@@ -6,7 +7,7 @@ import numpy as np
 class RFC(object):
     def __init__(self):
         self.le = LabelEncoder()
-        self.clf = RandomForestClassifier()
+        self.clf = KNeighborsClassifier(n_jobs=-1)
 
     def encode_clean(self, data):
         obj_df = data.select_dtypes(include=['object']).copy()
