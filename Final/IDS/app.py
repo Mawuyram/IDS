@@ -18,16 +18,6 @@ path = './lib/models/RandomForestClassifier.pkl'
 with open(path, 'rb') as f:
     model.clf = pickle.load(f)
 
-# Argument Parsing
-parser = reqparse.RequestParser()
-
-#Using Parser to get the various queries
-parser.add_argument('')
-parser.add_argument('')
-parser.add_argument('')
-parser.add_argument('')
-parser.add_argument('')
-
 class CaptureAnalyse(Resource):
 
     def get(self):
